@@ -4,8 +4,8 @@ import PokemonForm from './PokemonForm'
 import Search from './Search'
 import { Container } from 'semantic-ui-react'
 import { useSelector, useDispatch } from 'react-redux'
-import { fetchPokemons } from '../actions/pokemonActions'
-
+import { fetchPokemons, handleAddPokemon } from '../actions/pokemonActions'
+import { handleSortByName } from '../actions/userActions'
 function PokemonPage(){
   const pokemonState = useSelector(state => state.pokemons)
   const dispatch = useDispatch()
@@ -22,6 +22,8 @@ function PokemonPage(){
       <PokemonForm />
       <br />
       <Search />
+      <br />
+      <button onClick={() => dispatch(handleSortByName()) }>Sort</button>
       <br />
       <PokemonCollection />
     </Container>

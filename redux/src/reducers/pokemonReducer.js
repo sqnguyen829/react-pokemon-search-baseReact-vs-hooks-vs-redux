@@ -6,7 +6,6 @@ const pokemonState = {
 const pokemonReducer = (state = pokemonState, action) => {
     switch(action.type){
         case 'SET_POKEMONS':
-            console.log(action.pokemons)
             return {
                 ...state,
                 pokemons: action.pokemons,
@@ -14,7 +13,8 @@ const pokemonReducer = (state = pokemonState, action) => {
             }
         case 'ADD_POKEMON':
             return {
-                state
+                ...state,
+                pokemons: [...state.pokemons, action.pokemon]
             }
         default:
             return state

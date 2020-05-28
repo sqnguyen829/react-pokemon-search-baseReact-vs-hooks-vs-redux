@@ -1,21 +1,20 @@
 const userState = {
-
+    searchTerm:'',
+    sortByName:false
 }
 
 const userInputReducer = (state = userState, action) => {
     switch(action.type){
-        case 'ALL_USERS':
+        case 'SET_SEARCH_TERM':
             return {
                 ...state,
-                users:action.users,
-                displayUsers:action.users,
-                loadUsers:true
+                searchTerm:action.searchTerm
             }
-        case 'VALID_SIGN_UP':
+        case 'SORT_BY_NAME':
+            console.log(!state.sortByName)
             return {
                 ...state,
-                signUpValidation:action.validData,
-                clearValidation:true
+                sortByName:!state.sortByName
             }
         default:
             return state

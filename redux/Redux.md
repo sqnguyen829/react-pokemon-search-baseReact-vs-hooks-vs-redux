@@ -28,5 +28,6 @@ Next we need to wrap App component with a Provider tag imported from 'react-redu
 
 
 **Side note**
-Kept the hooks built in the pokemon cards
+Kept some hooks from the hooks version
+
 A reminder that this is probaly not the best usage of Redux since this app is such a small app.
